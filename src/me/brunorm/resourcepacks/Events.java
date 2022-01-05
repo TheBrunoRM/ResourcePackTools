@@ -11,9 +11,12 @@ public class Events implements Listener {
 
 	@EventHandler
 	void onJoin(PlayerJoinEvent event) {
-		event.getPlayer().setResourcePack(ResourcePackTools.config.getString("resourcepack_url"));
+		String url = ResourcePackTools.config.getString("resourcepack_url");
+		if(url == null) return;
+		event.getPlayer().setResourcePack(url);
 	}
 	
+	@EventHandler
 	void onResource(PlayerResourcePackStatusEvent event) {
 		Player player = event.getPlayer();
 		Status status = event.getStatus();
