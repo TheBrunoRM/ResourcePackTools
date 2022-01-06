@@ -2,3 +2,19 @@ main: me.brunorm.resourcepacks.ResourcePackTools
 name: ResourcePackTools
 version: 0.0.1
 author: BrunoRM
+
+commands:
+  resourcepacktools:
+    aliases: rpt
+    description: Main resource pack tools command.
+
+permissions:
+  resourcepacktools.*:
+    description: Main permission.
+    default: op
+  resourcepacktools.reload:
+    description: Permission to reload the configuration.
+    default: op
+  resourcepacktools.toggle:
+    description: Permission to toggle the plugin.
+    default: op

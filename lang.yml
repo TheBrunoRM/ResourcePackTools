@@ -1,0 +1,5 @@
+reloaded: "&aConfiguration reloaded!"
+declined: "You must accept the resource pack!"
+accepted: "Thanks for installing the resource pack."
+failedDownload: "Resource pack failed to install, try again."
+successfullyLoaded: "Resource pack installed successfully."

@@ -11,6 +11,7 @@ public class Events implements Listener {
 
 	@EventHandler
 	void onJoin(PlayerJoinEvent event) {
+		if(!ResourcePackTools.plugin.enabled) return;
 		String url = ResourcePackTools.config.getString("resourcepack_url");
 		if(url == null) return;
 		event.getPlayer().setResourcePack(url);
@@ -18,20 +19,23 @@ public class Events implements Listener {
 	
 	@EventHandler
 	void onResource(PlayerResourcePackStatusEvent event) {
+		if(!ResourcePackTools.plugin.enabled) return;
 		Player player = event.getPlayer();
 		Status status = event.getStatus();
 		switch(status) {
 		case DECLINED:
-			player.kickPlayer("You must accept the resource pack!");
+			player.kickPlayer(Messager.get("declined"));
 			break;
 		case ACCEPTED:
-			player.sendMessage("Thanks for installing the resource pack.");
+			player.sendMessage(Messager.get("accepted"));
 			break;
 		case FAILED_DOWNLOAD:
-			player.sendMessage("Resource pack failed to install, try again.");
+			String url = ResourcePackTools.config.getString("resourcepack_url");
+			player.sendMessage(Messager.get("failedDownload"));
+			event.getPlayer().setResourcePack(url);
 			break;
 		case SUCCESSFULLY_LOADED:
-			player.sendMessage("Resource pack installed successfully.");
+			player.sendMessage(Messager.get("successfullyLoaded"));
 			break;
 		}
 	}
