@@ -1,6 +1,6 @@
 main: me.brunorm.resourcepacks.ResourcePackTools
 name: ResourcePackTools
-version: 0.0.1
+version: 0.0.1.1
 author: BrunoRM
 
 commands:
