@@ -6,12 +6,14 @@ public class Messager {
 	
 	public static final char ALT_COLOR_CHAR = '&';
 	
-	public static String color(String text) {
-		return ChatColor.translateAlternateColorCodes(ALT_COLOR_CHAR, text);
+	public static String color(String string) {
+		return ChatColor.translateAlternateColorCodes(ALT_COLOR_CHAR, string);
 	}
 
 	public static String get(String string) {
-		return color(ResourcePackTools.langConfig.getString(string));
+		String text = ResourcePackTools.langConfig.getString(string);
+		if(text == null) text = string;
+		return color(text);
 	}
 	
 }
