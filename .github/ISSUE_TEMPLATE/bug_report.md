@@ -24,9 +24,9 @@ Plugin version:
 Minecraft server version: Bukkit/Spigot/Paper 1.X.X
 
 **Errors**
-The errors that the plugin throws.
+The errors that the plugin throws (if any).
 ```
-Insert the error on this code block
+Insert the error on this code block.
 ```
 
 **Additional context**
